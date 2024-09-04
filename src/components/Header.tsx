@@ -4,20 +4,6 @@ const Header: React.FC = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        // <div className="flex justify-between items-center shadow-sm p-6">
-        //     <img src="/images/logo.svg" alt="" width={150} height={100}/>
-
-        //     <ul className="hidden md:flex gap-16">
-        //         <li>Home</li>
-        //         <li>Search</li>
-        //         <li>About Us</li>
-        //         <li>Contact Us</li>
-        //     </ul>
-
-        //     <div>
-
-        //     </div>
-        // </div>
         <nav className="bg-white shadow-md">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">

@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Contact from './view/contact.tsx';
 import Login from './view/login.tsx';
 import Home from './view/home.tsx';
+import Profile from './view/profile.tsx';
+import AddListing from './view/addListing.tsx';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +21,14 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />
+  },
+  {
+    path: "/profile",
+    element: <Profile />
+  },
+  {
+    path: "/addListing",
+    element: <AddListing />
   },
 ]);
 
