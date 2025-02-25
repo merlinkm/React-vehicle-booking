@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
     const [open, setOpen] = useState(false);
@@ -31,10 +33,13 @@ const Header: React.FC = () => {
                     </div>
 
                     {/* User Login Button */}
-                    <div className="hidden md:flex items-center">
-                        <button className="text-white bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">
+                    <div className="hidden md:flex items-center gap-5">
+                       <a href="/login"> <button className="text-white bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">
                             Login
-                        </button>
+                        </button></a>
+                        <Link to={'/profile'}>
+                            <Button className="bg-green-500">Submit Listing</Button>
+                        </Link>
                     </div>
 
                     {/* Mobile menu button */}
