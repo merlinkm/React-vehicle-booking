@@ -6,12 +6,13 @@ interface InputFieldProps {
         name: string;
         required?:boolean;
     };
+    handleInputChange: (name: string, value: any) => void;
 }
 
-function TextareaField({item}:InputFieldProps) {
+function TextareaField({item, handleInputChange}:InputFieldProps) {
   return (
     <div>
-      <Textarea name={item?.name} />
+      <Textarea name={item?.name} onChange={(e) => handleInputChange(item.name, e.target.value)}/>
     </div>
   )
 }

@@ -131,8 +131,8 @@ const features = [
         "fieldType":"checkbox",
     },
     {
-        "label":"Air Conditioner",
-        "name":"airConditioner",
+        "label":"Radio",
+        "name":"radio",
         "fieldType":"checkbox",
     },
     {

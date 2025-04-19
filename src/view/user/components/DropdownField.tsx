@@ -14,18 +14,19 @@ interface InputFieldProps {
         required?: boolean;
         options?: string[];
     };
+    handleInputChange: (name: string, value: any) => void;
 }
 
-function DropdownField({ item }: InputFieldProps) {
+function DropdownField({ item,handleInputChange }: InputFieldProps) {
     return (
         <div>
-            <Select>
+            <Select onValueChange={(value) => handleInputChange(item.name, value)}>
                 <SelectTrigger className="w-full">
                     <SelectValue placeholder={item.label} />
                 </SelectTrigger>
                 <SelectContent>
                     {item?.options?.map((option, index) => (
-                        <SelectItem value={option}>{option}</SelectItem>
+                        <SelectItem key={index} value={option}>{option}</SelectItem>
 
                     ))}
                 </SelectContent>
