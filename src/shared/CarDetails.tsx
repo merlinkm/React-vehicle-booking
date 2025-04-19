@@ -5,14 +5,14 @@ const CarDetails=[
         "fieldType": "text",
         "required": true,
         "column": 2,
-        "icon": "FaClipboardList"
+        "icon": "faClipboardList"
     },
     {
         "label": "Tagline",
         "name": "tagline",
         "fieldType": "text",
         "column": 2,
-        "icon": "FaClipboardList"
+        "icon": "faTag"
     },
     {
         "label": "Original Price",
@@ -20,7 +20,7 @@ const CarDetails=[
         "fieldType": "text",
         "required": true,
         "column": 1,
-        "icon": "FaClipboardList"
+        "icon": "faIndianRupeeSign"
     },
     {
         "label": "Selling Price",
@@ -28,7 +28,7 @@ const CarDetails=[
         "fieldType": "text",
         "required": true,
         "column": 1,
-        "icon": "FaClipboardList"
+        "icon": "faIndianRupeeSign"
     },
     {
         "label": "Category",
@@ -43,7 +43,7 @@ const CarDetails=[
         ],
         "required": true,
         "column": 1,
-        "icon": "FaCar"
+        "icon": "faCar"
     },
     {
         "label": "Condition",
@@ -56,7 +56,7 @@ const CarDetails=[
         ],
         "required": true,
         "column": 1,
-        "icon": "FaCar"
+        "icon": "faCar"
     },
     {
         "label": "Type",
@@ -70,7 +70,7 @@ const CarDetails=[
         ],
         "required": true,
         "column": 1,
-        "icon": "FaChargingStation"
+        "icon": "faChargingStation"
     },
     {
         "label": "Make",
@@ -87,24 +87,7 @@ const CarDetails=[
         ],
         "required": true,
         "column": 1,
-        "icon": "FaChargingStation"
-    },
-    {
-        "label": "Make",
-        "name": "make",
-        "fieldType": "dropdown",
-        "options": [
-            "Toyota",
-            "Honda",
-            "Ford",
-            "Cheverlet",
-            "Nissan",
-            "Kia",
-            "Volvo"
-        ],
-        "required": true,
-        "column": 1,
-        "icon": "FaChargingStation"
+        "icon": "faBuilding"
     },
     {
         "label": "Year",
@@ -112,7 +95,7 @@ const CarDetails=[
         "fieldType": "number",
         "required": true,
         "column": 1,
-        "icon": "FaChargingStation"
+        "icon": "faCalendar"
     },
     {
         "label": "Description",
@@ -120,7 +103,7 @@ const CarDetails=[
         "fieldType": "textarea",
         "required": true,
         "column": 1,
-        "icon": "FaChargingStation"
+        "icon": "faList"
     }
 ]
 

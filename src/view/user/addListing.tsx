@@ -6,6 +6,7 @@ import InputField from './components/InputField'
 import DropdownField from './components/DropdownField'
 import TextareaField from './components/TextareaField'
 import { Checkbox } from '@/components/ui/checkbox'
+import IconsField from './components/IconsField'
 
 
 const AddListing: React.FC = () => {
@@ -39,7 +40,9 @@ const AddListing: React.FC = () => {
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
                             {CarDetails.CarDetails.map((item, index) => (
                                 <div key={index}>
-                                    <label htmlFor="" className='text-sm'>{item?.label} {item.required && <span className='text-red-700'>*</span>}</label>
+                                    <label htmlFor="" className='text-sm flex gap-2 text-center mb-1'>
+                                        <IconsField icon={item?.icon} />
+                                        {item?.label} {item.required && <span className='text-red-700'>*</span>}</label>
                                     {item?.fieldType == 'text' || item?.fieldType == 'number' ? <InputField item={item} handleInputChange={handleInputChange} />
                                         : item?.fieldType == 'dropdown' ? <DropdownField item={item} handleInputChange={handleInputChange} />
                                             : item?.fieldType == 'textarea' ? <TextareaField item={item} handleInputChange={handleInputChange} />
