@@ -7,10 +7,13 @@ import DropdownField from './components/DropdownField'
 import TextareaField from './components/TextareaField'
 import { Checkbox } from '@/components/ui/checkbox'
 import IconsField from './components/IconsField'
+import {db} from './../../../configs/index'
+import { carListingTable } from './../../../configs/schema'
 
 
 const AddListing: React.FC = () => {
     const [formData, setFormData] = useState<Record<string, any>>([]);
+    const [featuresData, setFeaturesData] = useState<Record<string, any>>([]);
 
     const handleInputChange = (name: string, value: any) => {
         setFormData((prevData) => ({
@@ -21,9 +24,41 @@ const AddListing: React.FC = () => {
         console.log(formData);
     }
 
-    const onSubmit = (e:any) => {
-        // e.preventDefault();
+    const handleFeatureChange = (name: string, value: any) => {
+        setFeaturesData((prevData) => ({
+            ...prevData,
+            [name]: value
+        }))
+
+        console.log(featuresData);
+    }
+
+    const onSubmit = async(e:any) => {
+        e.preventDefault();
         console.log(formData);
+
+        try {
+            const dataToInsert = {
+                listingTitle: formData.listingTitle,
+                tagline: formData.tagline,
+                originalPrice: formData.originalPrice,
+                sellingPrice: formData.sellingPrice,
+                category: formData.category,
+                condition: formData.condition,
+                type: formData.type,
+                make: formData.make,
+                year: formData.year,
+                description: formData.description,
+                features: featuresData,
+              };
+
+            const result = await db.insert(carListingTable).values(dataToInsert);
+            if(result){
+                console.log("Data Saved");                
+            }
+        } catch (error) {
+            console.log("Error",error);            
+        }
     }
 
     return (
@@ -61,7 +96,7 @@ const AddListing: React.FC = () => {
                         <div className='grid grid-cols-2 md:grid-cols-3'>
                             {CarDetails.features.map((item, index) => (
                                 <div key={index} className='flex gap-2 items-center'>
-                                    {item?.fieldType == 'checkbox' ? <Checkbox id={`${index}`} onCheckedChange={(value) => handleInputChange(item.name, value)} /> : null}
+                                    {item?.fieldType == 'checkbox' ? <Checkbox id={`${index}`} onCheckedChange={(value) => handleFeatureChange(item.name, value)} /> : null}
                                     <label htmlFor={`${index}`}>{item.label}</label>
                                 </div>
                             ))}
