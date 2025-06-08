@@ -50,6 +50,8 @@ export default tseslint.config({
 ```
 ## About
 Here developing a responsive, high-performance marketplace using React JS and Tailwindcss for the front end, Drizzle ORM for database interactions, Clerk for authentication, and Sendbird for real-time chat functionality.
+## How to Run:
+run by : ``npm run dev``
 ## Materials/References:
 React, Tailwindcss, hyperui, ui.Shadcn, Drizzle ORM, Clerk, Sendbird
 
